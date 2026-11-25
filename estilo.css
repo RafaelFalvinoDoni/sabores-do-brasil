@@ -1,0 +1,87 @@
+/* ===== Sabores do Brasil — estilo próprio (carregado DEPOIS do Bootstrap) =====
+   Para mudar a identidade visual, altere as variáveis abaixo. */
+:root {
+  --cor-marca: #b4441c;        /* terracota (cor principal) */
+  --cor-marca-escura: #8a3213;
+  --cor-fundo-claro: #fbf4ea;  /* creme */
+  --cor-texto: #2b2118;
+}
+
+body {
+  color: var(--cor-texto);
+  scroll-padding-top: 70px;    /* o menu fixo não cobre o título da seção */
+}
+html { scroll-padding-top: 70px; }
+
+/* Menu */
+.bg-marca { background-color: var(--cor-marca); }
+
+/* Seções */
+.apresentacao { background: linear-gradient(135deg, var(--cor-fundo-claro), #fff); }
+.bg-claro { background-color: var(--cor-fundo-claro); }
+
+/* Botões personalizados (adaptação de .btn-primary / .btn-outline-primary) */
+.btn-marca {
+  --bs-btn-bg: var(--cor-marca);
+  --bs-btn-border-color: var(--cor-marca);
+  --bs-btn-color: #fff;
+  --bs-btn-hover-bg: var(--cor-marca-escura);
+  --bs-btn-hover-border-color: var(--cor-marca-escura);
+  --bs-btn-hover-color: #fff;
+  --bs-btn-active-bg: var(--cor-marca-escura);
+  --bs-btn-active-color: #fff;
+}
+.btn-outline-marca {
+  --bs-btn-color: var(--cor-marca);
+  --bs-btn-border-color: var(--cor-marca);
+  --bs-btn-hover-bg: var(--cor-marca);
+  --bs-btn-hover-border-color: var(--cor-marca);
+  --bs-btn-hover-color: #fff;
+  --bs-btn-active-bg: var(--cor-marca-escura);
+  --bs-btn-active-color: #fff;
+}
+
+/* Carrossel: proporção fixa e legenda legível sobre a imagem */
+#carrosselDestaques .carousel-item img {
+  aspect-ratio: 16 / 7;
+  object-fit: cover;
+}
+.legenda {
+  background: rgba(0, 0, 0, 0.55);
+  border-radius: 0.75rem;
+  padding: 0.75rem 1rem;
+  left: 10%;
+  right: 10%;
+  bottom: 2.5rem;
+}
+@media (max-width: 575.98px) {
+  #carrosselDestaques .carousel-item img { aspect-ratio: 4 / 3; }
+  .legenda { bottom: 1.75rem; padding: 0.5rem; }
+  .legenda p { display: none; } /* no celular mostra só o título */
+}
+
+/* Cards: imagens com a mesma proporção */
+.card-prato .card-img-top {
+  aspect-ratio: 4 / 3;
+  object-fit: cover;
+}
+.card-prato { transition: transform .2s; }
+.card-prato:hover { transform: translateY(-4px); }
+
+/* Paginação na cor da marca */
+.pagination {
+  --bs-pagination-color: var(--cor-marca);
+  --bs-pagination-hover-color: var(--cor-marca-escura);
+  --bs-pagination-active-bg: var(--cor-marca);
+  --bs-pagination-active-border-color: var(--cor-marca);
+}
+
+/* Accordion: pergunta aberta na cor da marca */
+.accordion {
+  --bs-accordion-active-bg: var(--cor-fundo-claro);
+  --bs-accordion-active-color: var(--cor-marca-escura);
+}
+
+/* Rodapé */
+.rodape { background-color: var(--cor-texto); color: #f1e6d8; }
+.rodape a { color: #ffc89e; }
